@@ -40,6 +40,10 @@ img {
 .main-navbar {
     float: right;
 }
+
+.main-navbar i {
+  color: #FF001B;
+}
 .topnav a {
   float: left;
   display: block;
@@ -83,6 +87,7 @@ img {
     right: 0;
     top: 0;
   }
+
   .topnav.responsive a {
     float: none;
     display: block;
@@ -99,6 +104,15 @@ img {
     display: block;
     margin-top: -15px;
   }
+
+  img {
+    padding-right: 0;
+    width: 103px;
+    height: 19px;
+}
+.topnav {
+  margin: 18px 3px 15px 20px;
+}
 } 
 
 main {
