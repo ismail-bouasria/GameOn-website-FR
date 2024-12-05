@@ -308,23 +308,15 @@ input {
 
 .modal-confirmation {
   display: none; /* Caché par défaut */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  align-items: center;
+}
+.modal-confirmation-content{
+  text-align: center;
+}
+.btn-confirmation {
+  border: none;
+ width: 40%;
 }
 
-.modal-confirmation-content {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-  width: 300px;
-}
 /* custom select styles */
 .custom-select {
   position: relative;

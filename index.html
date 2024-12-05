@@ -54,22 +54,22 @@
       <div class="content">
         <span class="close"></span>
         <div class="modal-body">
-          <form name="reserve" action="index.html" method="get" onsubmit="return validate();">
+          <form name="reserve" id="modal-form">
             <div class="formData">
               <label for="firstname">Prénom</label><br>
               <input class="text-control" type="text" id="firstname" placeholder='Votre Prénom' name="firstname"
-                minlength="2"/>
+                minlength="2" />
               <br>
               <p class="error-message" id="error-firstname"></p>
             </div>
             <div class="formData">
               <label for="lastname">Nom</label><br>
-              <input class="text-control" type="text" id="lastname" placeholder="Votre Nom" name="lastname"/><br>
+              <input class="text-control" type="text" id="lastname" placeholder="Votre Nom" name="lastname" /><br>
               <p class="error-message" id="error-lastname"></p>
             </div>
             <div class="formData">
               <label for="email">E-mail</label><br>
-              <input class="text-control" type="email" id="email" placeholder="Votre email" name="email"/><br>
+              <input class="text-control" type="email" id="email" placeholder="Votre email" name="email" /><br>
               <p class="error-message" id="error-email"></p>
             </div>
             <div class="formData">
@@ -108,7 +108,7 @@
               <label class="checkbox-label" for="location6">
                 <span class="checkbox-icon"></span>
                 Portland</label>
-                <p class="error-message" id="error-location"></p>
+              <p class="error-message" id="error-location"></p>
             </div>
 
             <div class="formData">
@@ -126,17 +126,20 @@
               <br>
               <p class="error-message" id="error-checkbox"></p>
             </div>
-            <input class="btn-submit" type="submit" class="button" value="C'est parti" />
+            <input class="btn-submit" type="submit" class="button" value="C'est parti"/>
           </form>
+        </div>
+         <!-- Modal pour le message de confirmation -->
+        <div id="modal-confirmation" class="modal-body modal-confirmation">
+          <div class="modal-confirmation-content">
+            <p>Merci ! Votre réservation a été reçue.</p>
+            <button class="button btn-confirmation" id="close-modal-confirmation">OK</button>
+          </div>
         </div>
       </div>
     </div>
-    <!-- Modal pour le message de confirmation -->
-<div id="modal-confirmation" class="modal-confirmation">
-  <div class="modal-confirmation-content">
-    <p>Merci ! Votre réservation a été reçue.</p>
-    <button id="close-modal-confirmation">OK</button>
-  </div>
+   
+
   </main>
   <footer>
     <p class="copyrights">

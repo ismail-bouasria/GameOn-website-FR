@@ -33,19 +33,30 @@ closeCross.addEventListener("click",closeModal);
 
 // Sélect elements
 const modalForm = document.getElementById("modal-form");
- const submitButton = document.querySelector(".btn-submit");
 const modalConfirmation = document.getElementById("modal-confirmation");
 const closeModalForm = document.getElementById("close-modal-form");
 const closeModalConfirmation = document.getElementById("close-modal-confirmation");
+
+// Écouter l'événement "submit" sur le formulaire
+modalForm.addEventListener('submit', (event) => {
+  // Valider le formulaire ici
+  event.preventDefault(); // Empêcher la soumission par défaut
+
+  if (validate()) {
+    modalForm.style.display = "none"; // Fermer la première modal
+    modalConfirmation.style.display = "flex"; // Ouvrir la modal de confirmation
+  }
+});
 
 // Fonction for validate form
 function validate() {
   let isValid = true;
   
+  if (!isValid){
 
+  }
   // init error message
   document.querySelectorAll('.error-message').forEach(el => el.textContent = "");
-
   const firstname = document.getElementById("firstname").value.trim();
   const lastname = document.getElementById("lastname").value.trim();
   const email = document.getElementById("email").value.trim();
@@ -114,18 +125,19 @@ function validate() {
     isValid = false;
   }
 
-  // if form is valid
-  if (isValid) {
-    e.preventDefault
 
-    modalForm.style.display = "none"; // Fermer la première modal
-  
-    
-    modalConfirmation.style.display = ""; // Ouvrir la deuxième modal
-  }
-
-  return false; // Empêche le rechargement de la page
+ // Si le formulaire est valide
+ if (isValid) {
+  modalForm.style.display = "none"; // Fermer la première modal
+  modalConfirmation.style.display = "flex"; // Ouvrir la deuxième modal
+  return false; // Pour empêcher l'envoi en cas d'erreur
 }
+
+return false; // Empêche le rechargement de la page
+}
+
+// launch Validates
+btnSubmit.addEventListener("click", validate);
 
 // Validation of the e-mail
 function validateEmail(email) {
@@ -133,24 +145,3 @@ function validateEmail(email) {
   return re.test(email);
 }
 
- // Gestion de la soumission du formulaire
- form.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  if (validate()) {
-    // Fermer la modal de formulaire
-    modalForm.style.display = "none";
-
-    // Ouvrir la modal de confirmation
-    modalConfirmation.style.display = "flex";
-  }
-});
-
-// close modal
-closeModalForm.addEventListener("click", () => {
-  modalForm.style.display = "none";
-});
-
-closeModalConfirmation.addEventListener("click", () => {
-  modalConfirmation.style.display = "none";
-});
