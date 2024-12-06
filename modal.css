@@ -552,6 +552,7 @@ footer {
 }
 
 .hero-text {
+  margin : 20px 0 0;
   width: 100%;
   font-size: 14px;
 }
