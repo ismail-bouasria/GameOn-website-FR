@@ -45,6 +45,7 @@ modalForm.addEventListener('submit', (event) => {
   if (validate()) {
     modalForm.style.display = "none"; // Fermer la première modal
     modalConfirmation.style.display = "flex"; // Ouvrir la modal de confirmation
+    closeModalConfirmation.addEventListener('click',closeModal);
   }
 });
 
@@ -52,9 +53,6 @@ modalForm.addEventListener('submit', (event) => {
 function validate() {
   let isValid = true;
   
-  if (!isValid){
-
-  }
   // init error message
   document.querySelectorAll('.error-message').forEach(el => el.textContent = "");
   const firstname = document.getElementById("firstname").value.trim();
