@@ -37,6 +37,10 @@ const modalConfirmation = document.getElementById("modal-confirmation");
 const closeModalForm = document.getElementById("close-modal-form");
 const closeModalConfirmation = document.getElementById("close-modal-confirmation");
 
+// close modal confimation
+
+closeModalConfirmation.addEventListener('click',closeModal);
+
 // Écouter l'événement "submit" sur le formulaire
 modalForm.addEventListener('submit', (event) => {
   // Valider le formulaire ici
@@ -45,7 +49,7 @@ modalForm.addEventListener('submit', (event) => {
   if (validate()) {
     modalForm.style.display = "none"; // Fermer la première modal
     modalConfirmation.style.display = "flex"; // Ouvrir la modal de confirmation
-    closeModalConfirmation.addEventListener('click',closeModal);
+    
   }
 });
 
