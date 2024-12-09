@@ -65,7 +65,8 @@ function validate() {
   const birthdate = document.getElementById("birthdate").value;
   const quantity = document.getElementById("quantity").value;
   const location = document.querySelector('input[name="location"]:checked');
-  const checkbox1 = document.getElementById("checkbox1").checked;
+  const checkbox = document.getElementById("checkbox").checked;
+  const btnSubmit = document.getElementById("btnSubmit")
 
   // Validation firstname
   if (firstname.length < 2) {
@@ -122,8 +123,8 @@ function validate() {
   }
 
   // Validation checkbox
-  if (!checkbox1) {
-    document.getElementById("error-checkbox1").textContent = "Vous devez vérifier que vous acceptez les termes et conditions.";
+  if (!checkbox) {
+    document.getElementById("error-checkbox").textContent = "Vous devez vérifier que vous acceptez les termes et conditions.";
     isValid = false;
   }
 
